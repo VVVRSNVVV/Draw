@@ -3,7 +3,12 @@ using UnityEngine;
 public class BallScript : MonoBehaviour
 {
     public Rigidbody2D rb;
+    [SerializeField] private float speed;
+    [SerializeField] public int score; 
+
+
     public Vector3 velocity
+    
     {
         get => rb.velocity;
         set => rb.velocity = value;
@@ -13,7 +18,11 @@ public class BallScript : MonoBehaviour
     //    transform.Translate(velocity*Time.deltaTime);
     //}
 
-
+    //private void Awake()
+    //{
+    //    speed = rb.velocity.magnitude;
+    //    Debug.Log(speed);
+    //}
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var normal = collision.contacts[0].normal;
@@ -22,11 +31,11 @@ public class BallScript : MonoBehaviour
         Debug.Log(tangent);
         if (Vector3.Dot(tangent, velocity) > 0)
         {
-            velocity = tangent.normalized * velocity.magnitude;
+            velocity = tangent.normalized * speed;
         }
         else
         {
-            velocity = -tangent.normalized * velocity.magnitude;
+            velocity = -tangent.normalized * speed;
         }
     }
 }
