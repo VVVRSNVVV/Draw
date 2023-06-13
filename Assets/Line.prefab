@@ -80,7 +80,7 @@ LineRenderer:
   - {x: 1, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.30333954
+    widthMultiplier: 0.10116803
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -142,7 +142,7 @@ EdgeCollider2D:
   m_GameObject: {fileID: 8076070625514558464}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 685e6bca5fcbe2645ae6fc0c2b6f8e0a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
