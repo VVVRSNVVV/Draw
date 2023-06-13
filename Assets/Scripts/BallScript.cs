@@ -35,7 +35,7 @@ public class BallScript : MonoBehaviour
         var normal = collision.contacts[0].normal;
         var n = new Vector3(normal.x, normal.y, 0f);
         var tangent = Quaternion.Euler(0, 0, 90)*n;
-        Debug.Log(tangent);
+        
         if (Vector3.Dot(tangent, velocity) > 0)
         {
             velocity = tangent.normalized * speed;
@@ -46,14 +46,15 @@ public class BallScript : MonoBehaviour
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("SpeedZone")) 
         {
-
+        if (other.gameObject.CompareTag("SpeedZone"))
+            {
             speed = maxSpeed;
+            Debug.Log(maxSpeed);
+            }
         }
     }
-}
+
 
 
 
