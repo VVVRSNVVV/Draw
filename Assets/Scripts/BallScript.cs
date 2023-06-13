@@ -1,10 +1,13 @@
+using UnityEditor;
 using UnityEngine;
 
 public class BallScript : MonoBehaviour
 {
     public Rigidbody2D rb;
     [SerializeField] private float speed;
-    [SerializeField] public int score; 
+    [SerializeField] public int score;
+    private float maxSpeed;
+    
 
 
     public Vector3 velocity
@@ -23,6 +26,10 @@ public class BallScript : MonoBehaviour
     //    speed = rb.velocity.magnitude;
     //    Debug.Log(speed);
     //}
+    private void Awake()
+    {
+        maxSpeed = 2 * speed;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var normal = collision.contacts[0].normal;
@@ -36,6 +43,14 @@ public class BallScript : MonoBehaviour
         else
         {
             velocity = -tangent.normalized * speed;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("SpeedZone")) 
+        {
+
+            speed = maxSpeed;
         }
     }
 }
