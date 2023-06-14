@@ -724,6 +724,7 @@ GameObject:
   - component: {fileID: 1701746820}
   - component: {fileID: 1701746822}
   - component: {fileID: 1701746821}
+  - component: {fileID: 1701746823}
   m_Layer: 5
   m_Name: ProgresBar
   m_TagString: Untagged
@@ -771,7 +772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -789,6 +790,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701746819}
   m_CullTransparentMesh: 1
+--- !u!114 &1701746823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701746819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d036709c951e704e80463423f26a575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 1701746821}
+  _scoreManager: {fileID: 1877344061}
+  maxValue: 100
 --- !u!1 &1732041911
 GameObject:
   m_ObjectHideFlags: 0
