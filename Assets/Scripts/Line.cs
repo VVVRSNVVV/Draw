@@ -9,6 +9,7 @@ public class Line : MonoBehaviour
     public EdgeCollider2D edgeCol;
 
     List<Vector2> points;
+  
 
     public void UpdateLine(Vector2 mousePos)
     {
@@ -21,6 +22,14 @@ public class Line : MonoBehaviour
 
         if (Vector2.Distance(points.Last(), mousePos) > .1f)
             SetPoint(mousePos);
+
+
+    }
+    ////
+    private void OnMouseDown()
+    {
+
+        Destroy(gameObject);
     }
 
     void SetPoint(Vector2 point)

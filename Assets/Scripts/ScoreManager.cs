@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     public void scoring(int param)
     {
         score= score + param;
-        Debug.Log("Score: " + score);
+        
         onScoreUpdate?.Invoke(score);
     }
 
