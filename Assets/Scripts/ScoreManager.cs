@@ -6,6 +6,10 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class ScoreManager : MonoBehaviour
 {
+    [SerializeField] NewBallON newBallON;
+    //add merge ball
+    
+    public int scoreAvailable = 0;
     public int score = 0;
     public Action<int> onScoreUpdate;
     
@@ -13,9 +17,12 @@ public class ScoreManager : MonoBehaviour
     public void scoring(int param)
     {
         score= score + param;
-        
+        scoreAvailable = scoreAvailable + param;
+
         onScoreUpdate?.Invoke(score);
     }
+
+
 
 }
 
