@@ -8,13 +8,7 @@ public class BallCreator : MonoBehaviour
     public float spawnRate = .5f;
     public GameObject objectPrefab;
     [SerializeField] public Transform spawnPosition;
-    //public Vector3 spawnPosition = new Vector3(1.85f, 5.32f, 0);
-
-    public void Start()
-    {
-        InvokeRepeating("SpawnObject", 1f, 1f/spawnRate);
-
-    }
+    
 
     public void SpawnObject()
     {

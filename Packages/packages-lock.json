@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.celeriedaway.zergrush": {
+      "version": "https://github.com/CeleriedAway/ZergRush.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "jillejr.newtonsoft.json-for-unity": "13.0.102"
+      },
+      "hash": "47a51ca88e67d1ac55629935705f8b02a524a508"
+    },
     "com.unity.2d.animation": {
       "version": "7.0.9",
       "depth": 1,

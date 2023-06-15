@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using ZergRush.ReactiveCore;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -11,7 +9,12 @@ public class ScoreManager : MonoBehaviour
 
 
     
-    public int scoreAvailable = 40;
+    public Cell<int> scoreAvailableCell = new Cell<int>(40);
+    public int scoreAvailable
+    {
+        get => scoreAvailableCell.value;
+        set => scoreAvailableCell.value = value;
+    }
     public int score = 0;
     public Action<int> onScoreUpdate;
     public Action<int> onScoreAveilable;
@@ -20,19 +23,17 @@ public class ScoreManager : MonoBehaviour
     public void scoring(int param)
     {
         score= score + param;
-        scoreAvailable = scoreAvailable + param;
+        scoreAvailable += param;
 
         onScoreUpdate?.Invoke(score);
-        onScoreAveilable?.Invoke(scoreAvailable);
     }
 
     public void Buying(int coast)
     {
         if (coast < scoreAvailable)
         { 
-        scoreAvailable = scoreAvailable - coast;
+        scoreAvailable -= coast;
         }
-        onScoreAveilable?.Invoke(scoreAvailable);
     }
 
 
