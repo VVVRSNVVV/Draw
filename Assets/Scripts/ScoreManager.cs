@@ -22,6 +22,14 @@ public class ScoreManager : MonoBehaviour
         onScoreUpdate?.Invoke(score);
     }
 
+    public void Buying(int coast)
+    {
+        if (coast < scoreAvailable)
+        { 
+        scoreAvailable = scoreAvailable - coast;
+        }
+    }
+
 
 
 }
