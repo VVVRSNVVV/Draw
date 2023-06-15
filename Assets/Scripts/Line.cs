@@ -9,7 +9,7 @@ public class Line : MonoBehaviour
     public EdgeCollider2D edgeCol;
 
     List<Vector2> points;
-  
+
 
     public void UpdateLine(Vector2 mousePos)
     {
@@ -25,11 +25,9 @@ public class Line : MonoBehaviour
 
 
     }
-    ////
-    private void OnMouseDown()
+    public bool Overlaps(Vector2 point)
     {
-
-        Destroy(gameObject);
+        return edgeCol.OverlapPoint(point);
     }
 
     void SetPoint(Vector2 point)
