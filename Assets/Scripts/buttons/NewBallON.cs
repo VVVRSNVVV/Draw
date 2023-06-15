@@ -1,38 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
+
 
 public class NewBallON : MonoBehaviour
 {
-    //[SerializeField] Button newBallON;
+    [SerializeField] Button newBallON;
     [SerializeField] ScoreManager _scoreManager;
     [SerializeField] BallCreator _ballCreator;
 
-    private Renderer renderer;
+    
 
 
     [SerializeField] public int startCoast;
     [SerializeField] public int coastStep;
-    public int coast;
+    public int coast = 10;
 
     private void Awake()
     {
-        renderer = GetComponent<Renderer>();
+        _scoreManager.onScoreAveilable+= UpdateVisibility;
+        newBallON.onClick.AddListener(NewBall);
     }
 
-    //private void Update()
-    //{
-    //    if (coast < _scoreManager.scoreAvailable)
-    //    {
-    //        newBallON.SetActive(true);
-    //    }
-    //    else
-    //    {
-    //        newBallON.SetActive(false);
-    //    }
-    //}
+    private void UpdateVisibility(int scoreAvailable)
+    {
+       
+        if (coast <= scoreAvailable)
+        {
+            newBallON.interactable=true;
+        }
+        else
+        {
+            newBallON.interactable=true;
+        }
+    }
     private void Pricing()
     {
         coast = coast * coastStep;

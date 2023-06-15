@@ -8,11 +8,14 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] NewBallON newBallON;
     //add merge ball
+
+
     
-    public int scoreAvailable = 0;
+    public int scoreAvailable = 40;
     public int score = 0;
     public Action<int> onScoreUpdate;
-    
+    public Action<int> onScoreAveilable;
+
 
     public void scoring(int param)
     {
@@ -20,6 +23,7 @@ public class ScoreManager : MonoBehaviour
         scoreAvailable = scoreAvailable + param;
 
         onScoreUpdate?.Invoke(score);
+        onScoreAveilable?.Invoke(scoreAvailable);
     }
 
     public void Buying(int coast)
@@ -28,6 +32,7 @@ public class ScoreManager : MonoBehaviour
         { 
         scoreAvailable = scoreAvailable - coast;
         }
+        onScoreAveilable?.Invoke(scoreAvailable);
     }
 
 
