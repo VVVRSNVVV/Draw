@@ -13,6 +13,6 @@ public class AvailableScoreView : MonoBehaviour
 
     private void UpdateScore(int score)
     {
-        label.text = $"${score}";
+        label.text = $"{score}/1K";
     }
 }
