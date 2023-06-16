@@ -18,9 +18,9 @@ public class NewBallON : MonoBehaviour
 
 
 
-    [SerializeField] public int startCoast;
+   
     [SerializeField] public float coastStep;
-    public int coast = 10;
+    [SerializeField] public int coast;
 
     private void Awake()
     {
