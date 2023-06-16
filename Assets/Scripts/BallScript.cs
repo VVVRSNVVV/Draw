@@ -7,11 +7,18 @@ public class BallScript : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] public int score;
     private float maxSpeed;
-    
+    [SerializeField] private BallLost ballLost;
+    public void Init(BallCreator ballCreator)
+    {
+        ballLost.OnLost += () =>
+        {
+            ballCreator.Respawn(ballLost.gameObject);
+        };
+    }
 
 
     public Vector3 velocity
-    
+
     {
         get => rb.velocity;
         set => rb.velocity = value;
@@ -35,7 +42,7 @@ public class BallScript : MonoBehaviour
         var normal = collision.contacts[0].normal;
         var n = new Vector3(normal.x, normal.y, 0f);
         var tangent = Quaternion.Euler(0, 0, 90)*n;
-        
+
         if (Vector3.Dot(tangent, velocity) > 0)
         {
             velocity = tangent.normalized * speed;
@@ -46,14 +53,14 @@ public class BallScript : MonoBehaviour
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
-        {
+    {
         if (other.gameObject.CompareTag("SpeedZone"))
-            {
+        {
             speed = maxSpeed;
             Debug.Log(maxSpeed);
-            }
         }
     }
+}
 
 
 

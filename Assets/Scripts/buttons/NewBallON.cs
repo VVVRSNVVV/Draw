@@ -11,7 +11,7 @@ public class NewBallON : MonoBehaviour
     [SerializeField] ScoreManager _scoreManager;
     [SerializeField] BallCreator _ballCreator;
 
-    
+
 
 
     [SerializeField] public int startCoast;
@@ -20,20 +20,20 @@ public class NewBallON : MonoBehaviour
 
     private void Awake()
     {
-        _scoreManager.onScoreAveilable+= UpdateVisibility;
+        _scoreManager.scoreAvailableCell.ListenUpdates(UpdateVisibility);
         newBallON.onClick.AddListener(NewBall);
     }
 
     private void UpdateVisibility(int scoreAvailable)
     {
-       
+
         if (coast <= scoreAvailable)
         {
             newBallON.interactable=true;
         }
         else
         {
-            newBallON.interactable=true;
+            newBallON.interactable=false;
         }
     }
     private void Pricing()
@@ -44,8 +44,7 @@ public class NewBallON : MonoBehaviour
     public void NewBall()
     {
         _scoreManager.Buying(coast);
-        //_ballCreator.SpawnObject(); send type of ball that will be spawn 
-
+        _ballCreator.SpawnObject();
     }
 
 
