@@ -10,7 +10,7 @@ public class ScoreOut : MonoBehaviour
 
     private void UpdateScore(int score)
     {
-        textMeshPro.text = $"score {score}";
+        textMeshPro.text = $"{score}/1K";
     }
     private void Awake()
     {
