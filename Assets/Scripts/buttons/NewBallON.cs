@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.WSA;
 
 
 public class NewBallON : MonoBehaviour
@@ -11,11 +13,13 @@ public class NewBallON : MonoBehaviour
     [SerializeField] ScoreManager _scoreManager;
     [SerializeField] BallCreator _ballCreator;
 
+    public event Action<int> onCoastUpdate;
+
 
 
 
     [SerializeField] public int startCoast;
-    [SerializeField] public int coastStep;
+    [SerializeField] public float coastStep;
     public int coast = 10;
 
     private void Awake()
@@ -38,13 +42,15 @@ public class NewBallON : MonoBehaviour
     }
     private void Pricing()
     {
-        coast = coast * coastStep;
+        coast = Mathf.RoundToInt(coast * coastStep);
+        onCoastUpdate?.Invoke(coast);
     }
 
     public void NewBall()
     {
         _scoreManager.Buying(coast);
         _ballCreator.SpawnObject();
+        Pricing();
     }
 
 

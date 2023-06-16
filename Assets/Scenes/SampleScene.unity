@@ -518,7 +518,7 @@ RectTransform:
   m_GameObject: {fileID: 680039589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.316, y: 9.23, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1643400349}
@@ -528,7 +528,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -20, y: 20}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 206.9, y: 264.5}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &680039591
 MonoBehaviour:
@@ -614,7 +614,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 57ca04f95cd0748489c74b1e1cb809c1, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1016,6 +1016,7 @@ GameObject:
   - component: {fileID: 1643400349}
   - component: {fileID: 1643400351}
   - component: {fileID: 1643400350}
+  - component: {fileID: 1643400352}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1040,7 +1041,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1, y: -98}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643400350
@@ -1090,8 +1091,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1126,7 +1127,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 21.359035, y: 94.34691, z: 10.469273, w: 104.460205}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1140,6 +1141,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643400348}
   m_CullTransparentMesh: 1
+--- !u!114 &1643400352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643400348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6b2cca80224cc4fa841e235d7d25ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 1643400350}
+  scoreManager: {fileID: 1877344061}
+  _newBallON: {fileID: 680039591}
 --- !u!1 &1701746819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a650987f27749c24087de2ff0c0cd496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newBallON: {fileID: 0}
+  newBallON: {fileID: 680039591}
   score: 0
 --- !u!4 &1877344062
 Transform:
