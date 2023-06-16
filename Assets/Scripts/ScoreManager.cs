@@ -30,9 +30,10 @@ public class ScoreManager : MonoBehaviour
 
     public void Buying(int coast)
     {
-        if (coast < scoreAvailable)
+        if (coast <= scoreAvailable)
         { 
         scoreAvailable -= coast;
+            Debug.Log(coast);
         }
     }
 
