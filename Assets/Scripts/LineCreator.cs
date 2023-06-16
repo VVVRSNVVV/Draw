@@ -26,7 +26,6 @@ public class LineCreator : MonoBehaviour
             }
             GameObject lineGO = Instantiate(linePrefab);
             activeLine = lineGO.GetComponent<Line>();
-            activeLine.gameObject.AddComponent<Rigidbody2D>().simulated = false;
             lines.Add(activeLine);
         }
 
