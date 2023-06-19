@@ -26,6 +26,8 @@ public class Portal : MonoBehaviour
         if (Vector2.Distance(transform.position, other.transform.position)>distance) 
         {
             other.transform.position = new Vector2(destination.position.x, destination.position.y);
+           var ab = other.transform.GetComponent<Rigidbody2D>();
+            ab.velocity = destination.right*ab.velocity.magnitude;
         }
     }
 

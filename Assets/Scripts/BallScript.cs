@@ -12,7 +12,7 @@ public class BallScript : MonoBehaviour
     public BallType ballType;
 
 
-    
+
 
     public void Init(BallCreator ballCreator)
     {
@@ -53,6 +53,7 @@ public class BallScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("collision:", collision.collider);
         var normal = collision.contacts[0].normal;
         var n = new Vector3(normal.x, normal.y, 0f);
         var tangent = Quaternion.Euler(0, 0, 90)*n;
@@ -65,7 +66,7 @@ public class BallScript : MonoBehaviour
         {
             velocity = -tangent.normalized * speed;
         }
-       
+
 
 
     }

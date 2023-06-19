@@ -38,7 +38,13 @@ public class Line : MonoBehaviour
         lineRenderer.SetPosition(points.Count - 1, point);
 
         if (points.Count > 1)
+        {
+
+            edgeCol.enabled = true;
             edgeCol.points = points.ToArray();
+        }
+        else
+            edgeCol.enabled = false;
     }
 
 }
