@@ -104,13 +104,15 @@ public class MergeBalls : MonoBehaviour
             foreach (var ball in balls)
             {
                 this.balls.Remove(ball.gameObject);
-                Destroy(ball.gameObject);
+                ball.Disable();
+                //Destroy(ball.gameObject);
             }
             ballType = (BallType)(ballType + 1);
-            _ballCreator.SpawnObject(ballType);
+            BallMergeAnimator.Instance.Animate(balls);
+            //_ballCreator.SpawnObject(ballType);
 
         }
-        }
+    }
 
 
 

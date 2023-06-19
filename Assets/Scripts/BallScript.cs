@@ -21,6 +21,14 @@ public class BallScript : MonoBehaviour
             ballCreator.Respawn(ballLost.gameObject);
         };
     }
+    public void Disable()
+    {
+        rb.isKinematic = true;
+    }
+    public void Enable()
+    {
+        rb.isKinematic = false;
+    }
 
 
     public Vector3 velocity
