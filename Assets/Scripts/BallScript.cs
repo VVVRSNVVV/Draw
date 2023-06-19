@@ -8,6 +8,12 @@ public class BallScript : MonoBehaviour
     [SerializeField] public int score;
     private float maxSpeed;
     [SerializeField] private BallLost ballLost;
+
+    public BallType ballType;
+
+
+    
+
     public void Init(BallCreator ballCreator)
     {
         ballLost.OnLost += () =>
@@ -51,6 +57,9 @@ public class BallScript : MonoBehaviour
         {
             velocity = -tangent.normalized * speed;
         }
+       
+
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

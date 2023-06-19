@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,7 +19,7 @@ public class MergeBalls : MonoBehaviour
     [SerializeField] public float coastStep;
     [SerializeField] public int coast;
 
-    public List<BallScript> lines = new List<BallScript>();
+    public List<GameObject> balls = new List<GameObject>();
 
     private void Awake()
     {
@@ -38,10 +39,20 @@ public class MergeBalls : MonoBehaviour
             mergeBalls.interactable=false;
         }
     }
-    private void MergeValid()
-    { 
-    
-    }
+    //private void MergeValid()
+    //{
+    //    int ball_coubter = 0;
+    //    foreach (GameObject ball in balls)
+    //    {
+    //        if (line.Overlaps(ray))
+    //        {
+    //            lines.Remove(line);
+    //            Destroy(line.gameObject);
+    //            return;
+    //        }
+
+    //    }
+    //}
     private void Pricing()
     {
         coast = Mathf.RoundToInt(coast * coastStep);
