@@ -11,11 +11,14 @@ public class MergeBalls : MonoBehaviour
     [SerializeField] Button mergeBalls;
     [SerializeField] ScoreManager _scoreManager;
     [SerializeField] BallCreator _ballCreator;
+    private bool mergeValid= false;
 
     public event Action<int> onCoastUpdate;
 
     [SerializeField] public float coastStep;
     [SerializeField] public int coast;
+
+    public List<BallScript> lines = new List<BallScript>();
 
     private void Awake()
     {
@@ -34,6 +37,10 @@ public class MergeBalls : MonoBehaviour
         {
             mergeBalls.interactable=false;
         }
+    }
+    private void MergeValid()
+    { 
+    
     }
     private void Pricing()
     {
