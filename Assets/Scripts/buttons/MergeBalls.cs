@@ -68,8 +68,7 @@ public class MergeBalls : MonoBehaviour
 
     public void Merge()
     {
-        _scoreManager.Buying(coast);
-        Pricing();
+        
         //delete 3 same balls and spawn nex type ball
         Dictionary<BallType, List<BallScript>> map = new Dictionary<BallType, List<BallScript>>();
         foreach (var ball in balls.Select(b => b.GetComponent<BallScript>()))
@@ -89,6 +88,9 @@ public class MergeBalls : MonoBehaviour
             if (kvp.Value.Count >=3)
             {
                 Merge(kvp.Value.Take(3).ToList());
+                //
+                _scoreManager.Buying(coast);
+                Pricing();
                 return;
             }
         }

@@ -8,8 +8,14 @@ public class ScoreManager : MonoBehaviour
     //add merge ball
 
 
-    
-    public Cell<int> scoreAvailableCell = new Cell<int>(40);
+
+    private Cell<int> _scoreAvailableCell;
+    public Cell<int> scoreAvailableCell { get {
+            if (_scoreAvailableCell != null) { return _scoreAvailableCell; }
+            _scoreAvailableCell = new Cell<int>(initialScoreAvailable);
+            return _scoreAvailableCell;
+        } }
+    [SerializeField] private int initialScoreAvailable;
     public int scoreAvailable
     {
         get => scoreAvailableCell.value;
@@ -17,7 +23,6 @@ public class ScoreManager : MonoBehaviour
     }
     public int score = 0;
     public Action<int> onScoreUpdate;
-    public Action<int> onScoreAveilable;
 
 
     public void scoring(int param)
