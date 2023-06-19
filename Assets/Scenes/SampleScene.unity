@@ -292,7 +292,12 @@ MonoBehaviour:
   ballSpeed: 4
   spawnRate: 1
   objectPrefab: {fileID: 7981670261491822147, guid: 817656c7a64710c408bab1500a3707a0, type: 3}
+  ballPrefabs:
+  - {fileID: 1827051352174747156, guid: fe22a0c44a856924a8c77bfbe8989b8c, type: 3}
+  - {fileID: 1827051352174747156, guid: 817656c7a64710c408bab1500a3707a0, type: 3}
+  - {fileID: 1827051352174747156, guid: 0c283bd23cfa6034f8ee145179db0197, type: 3}
   spawnPosition: {fileID: 198953947}
+  balls: []
 --- !u!4 &198953947
 Transform:
   m_ObjectHideFlags: 0

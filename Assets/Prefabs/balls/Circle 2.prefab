@@ -141,6 +141,7 @@ MonoBehaviour:
   speed: 4
   score: 16
   ballLost: {fileID: 356079951338140538}
+  ballType: 1
 --- !u!114 &356079951338140538
 MonoBehaviour:
   m_ObjectHideFlags: 0
