@@ -9,7 +9,7 @@ public class BallScript : MonoBehaviour
     private float maxSpeed;
     [SerializeField] private BallLost ballLost;
 
-    public BallType ballType;
+    public int ballType;
 
 
 

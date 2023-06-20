@@ -70,7 +70,7 @@ public class MergeBalls : MonoBehaviour
     {
         
         //delete 3 same balls and spawn nex type ball
-        Dictionary<BallType, List<BallScript>> map = new Dictionary<BallType, List<BallScript>>();
+        Dictionary<int, List<BallScript>> map = new Dictionary<int, List<BallScript>>();
         foreach (var ball in balls.Select(b => b.GetComponent<BallScript>()))
         {
             if (map.ContainsKey(ball.ballType))
@@ -98,7 +98,7 @@ public class MergeBalls : MonoBehaviour
     private void Merge(List<BallScript> balls)
     {
         var ballType = balls[0].ballType;
-        if (ballType == BallType.big)
+        if (ballType == 3)
         { return; }
         else
         {
@@ -109,7 +109,7 @@ public class MergeBalls : MonoBehaviour
                 ball.Disable();
                 //Destroy(ball.gameObject);
             }
-            ballType = (BallType)(ballType + 1);
+            ballType = (ballType + 1);
             BallMergeAnimator.Instance.Animate(balls);
             //_ballCreator.SpawnObject(ballType);
 

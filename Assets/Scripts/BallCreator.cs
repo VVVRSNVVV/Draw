@@ -23,7 +23,7 @@ public class BallCreator : MonoBehaviour
         Respawn(ball);
         balls.Add(ball);
     }
-    public void SpawnObject(BallType ballType)
+    public void SpawnObject(int ballType)
     {
         Debug.Log(ballType);
         SpawnObject(ballPrefabs.First(x => x.ballType == ballType).gameObject);
