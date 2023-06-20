@@ -64,6 +64,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreManager: {fileID: 0}
+  textOrigin: {fileID: 0}
+  _textSpawner: {fileID: 0}
 --- !u!1 &5443033836049234825
 GameObject:
   m_ObjectHideFlags: 0
