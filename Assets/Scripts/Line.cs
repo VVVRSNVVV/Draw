@@ -7,6 +7,7 @@ public class Line : MonoBehaviour
 
     public LineRenderer lineRenderer;
     public EdgeCollider2D edgeCol;
+    public EdgeCollider2D edgeColMouse;
 
     List<Vector2> points;
 
@@ -42,9 +43,14 @@ public class Line : MonoBehaviour
 
             edgeCol.enabled = true;
             edgeCol.points = points.ToArray();
+            edgeColMouse.enabled = true;
+            edgeColMouse.points = points.ToArray();
         }
         else
+        {
             edgeCol.enabled = false;
+            edgeColMouse.enabled = false;
+        }
     }
 
 }

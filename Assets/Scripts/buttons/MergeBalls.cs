@@ -109,7 +109,7 @@ public class MergeBalls : MonoBehaviour
     private void Merge(List<BallScript> balls)
     {
         var ballType = balls[0].ballType;
-        if (ballType == 3)
+        if (ballType == 5)
         { return; }
         else
         {
