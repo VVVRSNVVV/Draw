@@ -36,7 +36,7 @@ public class MergeBalls : MonoBehaviour
     private void UpdateVisibility(int scoreAvailable)
     {
 
-        if (coast <= scoreAvailable)
+        if (coast <= scoreAvailable && CanMerge())
         {
             mergeBalls.interactable=true;
         }
@@ -44,31 +44,42 @@ public class MergeBalls : MonoBehaviour
         {
             mergeBalls.interactable=false;
         }
-        //BallType n = ballType.small;
+        
     }
-    //private void MergeValid()
-    //{
-    //    int ball_coubter = 0;
-    //    foreach (GameObject ball in balls)
-    //    {
-    //        if (line.Overlaps(ray))
-    //        {
-    //            lines.Remove(line);
-    //            Destroy(line.gameObject);
-    //            return;
-    //        }
-
-    //    }
-    //}
+  
     private void Pricing()
     {
         coast = Mathf.RoundToInt(coast * coastStep);
         onCoastUpdate?.Invoke(coast);
     }
+    private bool CanMerge()
+    {
+        Dictionary<int, List<BallScript>> map = new Dictionary<int, List<BallScript>>();
+        foreach (var ball in balls.Select(b => b.GetComponent<BallScript>()))
+        {
+            if (map.ContainsKey(ball.ballType))
+            {
+                map[ball.ballType].Add(ball);
+            }
+            else
+            {
+                map[ball.ballType] = new List<BallScript>();
+                map[ball.ballType].Add(ball);
+            }
+        }
+        foreach (var kvp in map)
+        {
+            if (kvp.Value.Count >=3)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void Merge()
     {
-        
+
         //delete 3 same balls and spawn nex type ball
         Dictionary<int, List<BallScript>> map = new Dictionary<int, List<BallScript>>();
         foreach (var ball in balls.Select(b => b.GetComponent<BallScript>()))
@@ -102,16 +113,16 @@ public class MergeBalls : MonoBehaviour
         { return; }
         else
         {
-           
+
+            
+            ballType = (ballType + 1);
+            BallMergeAnimator.Instance.Animate(balls);
+            _ballCreator.SpawnObject(ballType);
             foreach (var ball in balls)
             {
                 this.balls.Remove(ball.gameObject);
-                ball.Disable();
-                //Destroy(ball.gameObject);
+                Destroy(ball.gameObject);
             }
-            ballType = (ballType + 1);
-            BallMergeAnimator.Instance.Animate(balls);
-            //_ballCreator.SpawnObject(ballType);
 
         }
     }
