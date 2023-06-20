@@ -2554,7 +2554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1701746821}
   _scoreManager: {fileID: 1877344061}
-  maxValue: 100
+  maxValue: 1000
 --- !u!1 &1732041911
 GameObject:
   m_ObjectHideFlags: 0
