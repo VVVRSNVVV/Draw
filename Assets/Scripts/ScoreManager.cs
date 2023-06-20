@@ -5,9 +5,10 @@ using ZergRush.ReactiveCore;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] NewBallON newBallON;
-    //add merge ball
+    [SerializeField] int maxScore;
 
-
+    public event Action onComplited;
+    private bool isComplited;
 
     private Cell<int> _scoreAvailableCell;
     public Cell<int> scoreAvailableCell { get {
@@ -31,6 +32,11 @@ public class ScoreManager : MonoBehaviour
         scoreAvailable += param;
 
         onScoreUpdate?.Invoke(score);
+        if (score >= maxScore && !isComplited) 
+        {
+            isComplited = true;
+            onComplited?.Invoke();
+        }
     }
 
     public void Buying(int coast)

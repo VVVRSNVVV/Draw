@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class BallMergeAnimator : MonoBehaviour
         Instance = this;
     }
     public List<MergeBallView> mergeViewPrefabs;
-    public void Animate(List<BallScript> balls)
+    public void Animate(List<BallScript> balls, Action onFinishedAnimate)
     {
         var ballType = balls[0].ballType;
         var prefab = mergeViewPrefabs.First(x => x.ballType == ballType);
@@ -33,6 +34,7 @@ public class BallMergeAnimator : MonoBehaviour
             mergeBallView.transform.localPosition = Vector3.zero;
             AnimateBall(mergeBall.transform, mainAnimTime, GetPosition(i));
         }
+        DOVirtual.DelayedCall(setupTime+mainAnimTime, () => { onFinishedAnimate?.Invoke(); });
     }
     private void AnimateBall(Transform ball, float time, Vector3 pos)
     {

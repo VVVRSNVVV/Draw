@@ -14,7 +14,8 @@ public class MergeBalls : MonoBehaviour
     [SerializeField] Button mergeBalls;
     [SerializeField] ScoreManager _scoreManager;
     [SerializeField] BallCreator _ballCreator;
-    private bool mergeValid = false;
+    private bool isAnimating = false;
+   
 
     public event Action<int> onCoastUpdate;
 
@@ -35,7 +36,7 @@ public class MergeBalls : MonoBehaviour
 
     private void UpdateVisibility(int scoreAvailable)
     {
-
+        if (isAnimating) { return; }
         if (coast <= scoreAvailable && CanMerge())
         {
             mergeBalls.interactable=true;
@@ -79,7 +80,7 @@ public class MergeBalls : MonoBehaviour
 
     public void Merge()
     {
-
+        if (isAnimating) { return; }
         //delete 3 same balls and spawn nex type ball
         Dictionary<int, List<BallScript>> map = new Dictionary<int, List<BallScript>>();
         foreach (var ball in balls.Select(b => b.GetComponent<BallScript>()))
@@ -108,6 +109,8 @@ public class MergeBalls : MonoBehaviour
     }
     private void Merge(List<BallScript> balls)
     {
+        mergeBalls.interactable = false;
+        isAnimating = true;
         var ballType = balls[0].ballType;
         if (ballType == 5)
         { return; }
@@ -116,7 +119,9 @@ public class MergeBalls : MonoBehaviour
 
             
             ballType = (ballType + 1);
-            BallMergeAnimator.Instance.Animate(balls);
+            BallMergeAnimator.Instance.Animate(balls, ()=> { isAnimating = false;
+                mergeBalls.interactable=true;
+            });
             _ballCreator.SpawnObject(ballType);
             foreach (var ball in balls)
             {

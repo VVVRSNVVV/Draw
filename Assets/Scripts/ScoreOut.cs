@@ -15,7 +15,7 @@ public class ScoreOut : MonoBehaviour
     private void Awake()
     {
         
-        textMeshPro = GetComponent<TextMeshProUGUI>();
+        
 
         _scoreManager.onScoreUpdate+=UpdateScore;
         UpdateScore(0);
