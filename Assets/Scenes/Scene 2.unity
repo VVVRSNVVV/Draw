@@ -253,7 +253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276475828991525759, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.08
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7276475828991525759, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1437,6 +1437,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2643345992139936834, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3547200363253900886, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
       propertyPath: m_Name
       value: Ring
@@ -1463,11 +1467,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7276475828991525759, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.19
+      value: 0.16
       objectReference: {fileID: 0}
     - target: {fileID: 7276475828991525759, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.05
+      value: -0.22
       objectReference: {fileID: 0}
     - target: {fileID: 7276475828991525759, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
       propertyPath: m_LocalPosition.z

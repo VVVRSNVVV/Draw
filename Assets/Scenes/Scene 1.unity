@@ -561,17 +561,6 @@ Transform:
   m_Father: {fileID: 346746848}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &680039591 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4057104992463813975, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
-  m_PrefabInstance: {fileID: 4057104993143777776}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64972f086c8ff3f45a951f2aabe9b561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &953738795
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +826,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a650987f27749c24087de2ff0c0cd496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newBallON: {fileID: 680039591}
   maxScore: 1000
   initialScoreAvailable: 10000
   score: 0
@@ -1322,6 +1310,10 @@ PrefabInstance:
     - target: {fileID: 172748850903923023, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643345992139936834, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3547200363253900886, guid: 65cc9aff05813944a8f085e15747f525, type: 3}
       propertyPath: m_Name

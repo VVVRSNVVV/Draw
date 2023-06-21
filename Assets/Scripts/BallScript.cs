@@ -28,6 +28,7 @@ public class BallScript : MonoBehaviour
     public void Enable()
     {
         rb.isKinematic = false;
+        speed = maxSpeed/2;
     }
 
 
@@ -75,6 +76,7 @@ public class BallScript : MonoBehaviour
         if (other.gameObject.CompareTag("SpeedZone"))
         {
             speed = maxSpeed;
+            velocity = speed * velocity.normalized;
             Debug.Log(maxSpeed);
         }
     }
