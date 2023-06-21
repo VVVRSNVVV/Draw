@@ -7,6 +7,8 @@ TagManager:
   - SpeedZone
   - blue portal
   - orange portal
+  - Undefined
+  - ball
   layers:
   - Default
   - TransparentFX

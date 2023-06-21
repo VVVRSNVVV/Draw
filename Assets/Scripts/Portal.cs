@@ -23,12 +23,17 @@ public class Portal : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (Vector2.Distance(transform.position, other.transform.position)>distance) 
+        if (other.CompareTag("ball"))
         {
-            other.transform.position = new Vector2(destination.position.x, destination.position.y);
-           var ab = other.transform.GetComponent<Rigidbody2D>();
-            ab.velocity = destination.right*ab.velocity.magnitude;
+            Debug.Log("ball");
+            if (Vector2.Distance(transform.position, other.transform.position)>distance)
+            {
+                other.transform.position = new Vector2(destination.position.x, destination.position.y);
+                var ab = other.transform.GetComponent<Rigidbody2D>();
+                ab.velocity = destination.right*ab.velocity.magnitude;
+            }
         }
+        else { return; }
     }
 
 
