@@ -1420,6 +1420,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1710519255446345220, guid: e55888e701f0f564fbc195046a2caf6d, type: 3}
+      propertyPath: isOrange
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1710519255446345221, guid: e55888e701f0f564fbc195046a2caf6d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.68
@@ -1448,6 +1452,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1710519256193131912, guid: e55888e701f0f564fbc195046a2caf6d, type: 3}
+      propertyPath: isOrange
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1710519256193131914, guid: e55888e701f0f564fbc195046a2caf6d, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -1468,7 +1476,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1710519255446345220, guid: e55888e701f0f564fbc195046a2caf6d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e55888e701f0f564fbc195046a2caf6d, type: 3}
 --- !u!1 &953738795
 GameObject:
@@ -2657,7 +2666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1701746821}
   _scoreManager: {fileID: 1877344061}
-  maxValue: 1000
+  maxValue: 5000
 --- !u!1 &1732041911
 GameObject:
   m_ObjectHideFlags: 0
