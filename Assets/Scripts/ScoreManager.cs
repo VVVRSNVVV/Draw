@@ -5,7 +5,7 @@ using ZergRush.ReactiveCore;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] NewBallON newBallON;
-    [SerializeField] int maxScore;
+    public int maxScore;
 
     public event Action onComplited;
     private bool isComplited;

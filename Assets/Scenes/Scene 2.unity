@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextStageButton: {fileID: 123952358}
-  sceneIndex: 0
+  sceneIndex: 2
   _scoreManager: {fileID: 1877344061}
 --- !u!114 &123952358
 MonoBehaviour:
@@ -2887,8 +2887,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newBallON: {fileID: 680039591}
-  maxScore: 100
-  initialScoreAvailable: 10000
+  maxScore: 5000
+  initialScoreAvailable: 100000
   score: 0
 --- !u!4 &1877344062
 Transform:

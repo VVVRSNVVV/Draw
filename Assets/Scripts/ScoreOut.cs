@@ -10,7 +10,7 @@ public class ScoreOut : MonoBehaviour
 
     private void UpdateScore(int score)
     {
-        textMeshPro.text = $"{score}/5K";
+        textMeshPro.text = $"{score}/{MaxScore()}";
     }
     private void Awake()
     {
@@ -19,5 +19,9 @@ public class ScoreOut : MonoBehaviour
 
         _scoreManager.onScoreUpdate+=UpdateScore;
         UpdateScore(0);
+    }
+    private string MaxScore()
+    {
+        return (_scoreManager.maxScore/1000).ToString() + "K";
     }
 }

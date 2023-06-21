@@ -7,7 +7,7 @@ public class LevelComplite : MonoBehaviour
 {
     [SerializeField] private Image image;
     [SerializeField] ScoreManager _scoreManager;
-    [SerializeField] private float maxValue = 5000;
+    private float maxValue => _scoreManager.maxScore;
 
 
     private void LateUpdate()

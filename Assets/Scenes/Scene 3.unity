@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextStageButton: {fileID: 123952358}
-  sceneIndex: 0
+  sceneIndex: 3
   _scoreManager: {fileID: 1877344061}
 --- !u!114 &123952358
 MonoBehaviour:
@@ -3202,7 +3202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1701746821}
   _scoreManager: {fileID: 1877344061}
-  maxValue: 1000
 --- !u!1 &1732041911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,8 +3422,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newBallON: {fileID: 680039591}
-  maxScore: 100
-  initialScoreAvailable: 10000
+  maxScore: 10000
+  initialScoreAvailable: 1000000
   score: 0
 --- !u!4 &1877344062
 Transform:

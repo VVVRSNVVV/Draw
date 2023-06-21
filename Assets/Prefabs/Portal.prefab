@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 1710519255446345337}
   - component: {fileID: 1710519255446345338}
   - component: {fileID: 1710519255446345339}
-  - component: {fileID: 1710519255446345220}
   m_Layer: 0
   m_Name: portalOUT
   m_TagString: orange portal
@@ -157,20 +156,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1710519255446345220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1710519255446345222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac811a00a4fe38448814fd3f2dd5734, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOrange: 0
-  distance: 0.2
 --- !u!1 &1710519256193131915
 GameObject:
   m_ObjectHideFlags: 0
