@@ -1205,8 +1205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2635f10979477c498adc67a62f24db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  setupTime: 1
-  mainAnimTime: 1
+  setupTime: 0.4
+  mainAnimTime: 0.5
   radius: 1
   radialSpeed: 1
   angularSpeed: 100
@@ -1485,10 +1485,18 @@ PrefabInstance:
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 1877344061}
+    - target: {fileID: 4057104992772065179, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
+      propertyPath: m_text
+      value: STAGE 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4057104993125086484, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
       propertyPath: _scoreManager
       value: 
       objectReference: {fileID: 1877344061}
+    - target: {fileID: 4057104993125086485, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
+      propertyPath: sceneIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4057104993125086485, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
       propertyPath: _scoreManager
       value: 
