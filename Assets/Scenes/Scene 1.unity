@@ -224,6 +224,7 @@ MonoBehaviour:
   - {fileID: 1827051352174747156, guid: 287d0cd3358ca6b41862ab87fa31a23a, type: 3}
   - {fileID: 1827051352174747156, guid: ba968e7e457c21b489a8f26be5ce85f2, type: 3}
   spawnPosition: {fileID: 198953947}
+  pipe: {fileID: 1408821820}
   balls: []
 --- !u!4 &198953947
 Transform:

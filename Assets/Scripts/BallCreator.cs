@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ public class BallCreator : MonoBehaviour
     public GameObject objectPrefab;
     public List<BallScript> ballPrefabs;
     [SerializeField] public Transform spawnPosition;
+    [SerializeField] private Pipe pipe;
 
     public List<GameObject> balls = new List<GameObject>();
     public void SpawnObject()
@@ -51,9 +53,21 @@ public class BallCreator : MonoBehaviour
     }
     public void Respawn(GameObject ball)
     {
-        ball.transform.position = spawnPosition.position;
-        ball.transform.rotation = Quaternion.identity;
-        var rb = ball.GetComponent<Rigidbody2D>();
-        rb.velocity = Vector2.left*ballSpeed;
+        var ballComp = ball.GetComponent<BallScript>();
+        ballComp.Disable();
+        ball.transform.parent = pipe.transform;
+        ball.GetComponent<Animator>().enabled = true; 
+        ball.GetComponent<Animator>().SetTrigger("Spawn");
+        ball.GetComponent<Rigidbody2D>().angularVelocity = 0;
+            ball.transform.rotation = Quaternion.identity;
+        DOVirtual.DelayedCall(1.2f, ()=>
+        {
+            ballComp.Enable();
+            ball.GetComponent<Animator>().enabled = false;
+            var rb = ball.GetComponent<Rigidbody2D>();
+            rb.velocity = Vector2.left*ballSpeed;
+        });
+        //ball.transform.position = spawnPosition.position;
+
     }
 }

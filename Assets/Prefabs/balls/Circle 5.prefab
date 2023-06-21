@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1827051352174747156}
   - component: {fileID: -2415603121618994483}
   - component: {fileID: 5290566689161584892}
+  - component: {fileID: 6526723194364841812}
   m_Layer: 9
   m_Name: Circle 5
   m_TagString: ball
@@ -155,3 +156,23 @@ CircleCollider2D:
   m_Offset: {x: 0.008237839, y: -0.01338625}
   serializedVersion: 2
   m_Radius: 0.2819004
+--- !u!95 &6526723194364841812
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7981670261491822147}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cb63104a244425440ae5c62c2a98a740, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
