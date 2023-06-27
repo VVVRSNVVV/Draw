@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
     public void scoring(int param)
     {
         score= score + param;
-        scoreAvailable += param;
+        scoreAvailable += param * ComboHandler.Instance.combo;
 
         onScoreUpdate?.Invoke(score);
         if (score >= maxScore && !isComplited) 
