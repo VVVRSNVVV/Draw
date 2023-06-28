@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class BallCreator : MonoBehaviour
+public class SimpleBallCreator : MonoBehaviour
 {
     public float ballSpeed = 2f;
     public float spawnRate = .5f;
@@ -21,7 +21,7 @@ public class BallCreator : MonoBehaviour
     public void SpawnObject(GameObject prefab)
     {
         var ball = Instantiate(prefab, spawnPosition.position, Quaternion.identity);
-        ball.GetComponent<BallScript>().Init(this);
+        //ball.GetComponent<BallScript>().Init(this);
         Respawn(ball);
         balls.Add(ball);
     }
