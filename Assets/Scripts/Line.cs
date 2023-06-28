@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Line : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class Line : MonoBehaviour
     public EdgeCollider2D edgeColMouse;
 
     List<Vector2> points;
+    public event Action OnDestroyCallback;
+    private void OnDestroy()
+    {
+        OnDestroyCallback?.Invoke();
+    }
 
 
     public void UpdateLine(Vector2 mousePos)

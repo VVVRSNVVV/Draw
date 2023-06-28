@@ -14,19 +14,25 @@ public class LineCreator : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 ray = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            foreach(Line line in lines)
+            foreach (Line line in lines)
             {
                 if (line.Overlaps(ray))
                 {
-                    lines.Remove(line);
                     Destroy(line.gameObject);
                     return;
                 }
-            
+
             }
             GameObject lineGO = Instantiate(linePrefab);
             activeLine = lineGO.GetComponent<Line>();
             lines.Add(activeLine);
+                var _line = activeLine;
+            activeLine.OnDestroyCallback += () =>
+            {
+                Debug.Log("activeLine.OnDestroyCallback(), line: " + _line.name);
+                lines.Remove(_line);
+
+            };
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -41,5 +47,6 @@ public class LineCreator : MonoBehaviour
         }
 
     }
+
 
 }
