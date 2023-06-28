@@ -1242,7 +1242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxScore: 10000
-  initialScoreAvailable: 1000000
+  initialScoreAvailable: 8000
   score: 0
 --- !u!4 &1877344062
 Transform:
