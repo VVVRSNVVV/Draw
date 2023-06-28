@@ -1108,7 +1108,7 @@ PrefabInstance:
       objectReference: {fileID: 1877344061}
     - target: {fileID: 4057104993125086485, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
       propertyPath: sceneIndex
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4057104993125086485, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
       propertyPath: _scoreManager
@@ -1365,6 +1365,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: SpeedZone
       objectReference: {fileID: 0}
+    - target: {fileID: 9212898110427866279, guid: 370560852f62bac42b05ff22a3329b54, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ea88cd988cec93647b36d869b6db31d8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 370560852f62bac42b05ff22a3329b54, type: 3}
 --- !u!1001 &4101331873302144800
