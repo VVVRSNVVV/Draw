@@ -21,6 +21,13 @@ public class BallScript : MonoBehaviour
             ballCreator.Respawn(ballLost.gameObject);
         };
     }
+    public void Init(SimpleBallCreator ballCreator)
+    {
+        ballLost.OnLost += () =>
+        {
+            ballCreator.Respawn(ballLost.gameObject);
+        };
+    }
     public void Disable()
     {
         rb.isKinematic = true;

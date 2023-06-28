@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SimpleBallCreator : MonoBehaviour
 {
@@ -12,11 +13,18 @@ public class SimpleBallCreator : MonoBehaviour
     public List<BallScript> ballPrefabs;
     [SerializeField] public Transform spawnPosition;
     [SerializeField] private Pipe pipe;
+    [SerializeField] Image pen;
 
     public List<GameObject> balls = new List<GameObject>();
+    private void Awake()
+    {
+        TutorialLine.OnDrawn += SpawnObject;
+        //
+    }
     public void SpawnObject()
     {
         SpawnObject(objectPrefab);
+        pen.enabled = false;
     }
     public void SpawnObject(GameObject prefab)
     {
@@ -53,21 +61,11 @@ public class SimpleBallCreator : MonoBehaviour
     public void Respawn(GameObject ball)
     {
         var ballComp = ball.GetComponent<BallScript>();
-        ballComp.Disable();
-        if (pipe)
-            ball.transform.parent = pipe.transform;
-        ball.GetComponent<Animator>().enabled = true;
-        ball.GetComponent<Animator>().SetTrigger("Spawn");
-        ball.GetComponent<Rigidbody2D>().angularVelocity = 0;
-        ball.transform.rotation = Quaternion.identity;
-        DOVirtual.DelayedCall(1.2f, () =>
-        {
-            ballComp.Enable();
-            ball.GetComponent<Animator>().enabled = false;
-            var rb = ball.GetComponent<Rigidbody2D>();
-            rb.velocity = Vector2.left * ballSpeed;
-        });
-        //ball.transform.position = spawnPosition.position;
+        ballComp.Enable();
+        var rb = ball.GetComponent<Rigidbody2D>();
+        ball.GetComponent<Animator>().enabled = false;
+        rb.velocity = Vector2.left * ballSpeed;
+        ball.transform.position = spawnPosition.position;
 
     }
 }
