@@ -14,11 +14,13 @@ public class SimpleBallCreator : MonoBehaviour
     [SerializeField] public Transform spawnPosition;
     [SerializeField] private Pipe pipe;
     [SerializeField] Image pen;
+    [SerializeField] private RindEDHandler rindEDHandler;
 
     public List<GameObject> balls = new List<GameObject>();
     private void Awake()
     {
         TutorialLine.OnDrawn += SpawnObject;
+        TutorialLine.OnDrawn += rindEDHandler.reset;
         //
     }
     public void SpawnObject()
