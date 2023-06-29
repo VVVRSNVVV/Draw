@@ -1098,6 +1098,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1049880442, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4057104991480115575, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
       propertyPath: _scoreManager
       value: 
@@ -1218,10 +1222,6 @@ PrefabInstance:
       propertyPath: _scoreManager
       value: 
       objectReference: {fileID: 1877344061}
-    - target: {fileID: 4057104993125086485, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
-      propertyPath: sceneIndex
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4057104993125086485, guid: ba77ac2138bd8da4a919960d85ebf175, type: 3}
       propertyPath: _scoreManager
       value: 

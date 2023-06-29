@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1049880443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2524,7 +2524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextStageButton: {fileID: 4057104993125086486}
-  sceneIndex: 1
+  sceneIndex: 4
   _scoreManager: {fileID: 0}
 --- !u!114 &4057104993125086484
 MonoBehaviour:

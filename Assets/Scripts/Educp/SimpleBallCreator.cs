@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,8 @@ public class SimpleBallCreator : MonoBehaviour
     [SerializeField] Image pen;
     [SerializeField] private RindEDHandler rindEDHandler;
 
+    public event Action OnBallSpawn;
+
     public List<GameObject> balls = new List<GameObject>();
     private void Awake()
     {
@@ -27,6 +30,7 @@ public class SimpleBallCreator : MonoBehaviour
     {
         SpawnObject(objectPrefab);
         pen.enabled = false;
+        OnBallSpawn?.Invoke();
     }
     public void SpawnObject(GameObject prefab)
     {

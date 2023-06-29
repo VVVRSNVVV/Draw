@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,9 @@ public class RespawnerED : MonoBehaviour
 {
     [SerializeField] private float showTryAgainDuration;
     [SerializeField] private GameObject tryAgain;
+
+    public event Action OnBallDestroy;
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -15,6 +19,7 @@ public class RespawnerED : MonoBehaviour
         {
             Destroy(line.gameObject);
         }
+        OnBallDestroy?.Invoke();
     }
     private IEnumerator Show(GameObject go, float duration)
     {
