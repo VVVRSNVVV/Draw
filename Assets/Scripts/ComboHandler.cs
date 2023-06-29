@@ -49,7 +49,7 @@ public class ComboHandler : MonoBehaviour
     
     private void Update()
     {
-        value -= Time.deltaTime * comboDecreaseSpeed * (combo/2);
+        value -= Time.deltaTime * comboDecreaseSpeed;
         while(value < 0)
         {
             if(combo == 1)

@@ -9,6 +9,7 @@ TagManager:
   - orange portal
   - Undefined
   - ball
+  - ring
   layers:
   - Default
   - TransparentFX

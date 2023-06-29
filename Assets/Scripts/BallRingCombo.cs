@@ -11,6 +11,7 @@ public class BallRingCombo : MonoBehaviour
     {
         if (!IsRing(collision)) return;
         if(rings.Contains(collision.gameObject)) return;
+        Debug.Log("BallRingCombo");
         rings.Add(collision.gameObject);
         combo++;
         if(combo == comboTarget)
@@ -22,7 +23,7 @@ public class BallRingCombo : MonoBehaviour
     }
     private bool IsRing(Collider2D collision)
     {
-        if (collision.tag == "Ball") { return true; }
+        if (collision.tag == "ring") { return true; }
 
         else { return false; }
     }
