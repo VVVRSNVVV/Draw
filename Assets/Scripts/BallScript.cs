@@ -35,7 +35,13 @@ public class BallScript : MonoBehaviour
     public void Enable()
     {
         rb.isKinematic = false;
-        speed = maxSpeed/2;
+        speed = maxSpeed / 2;
+        if (TryGetComponent(out BallRingCombo ballRingCombo))
+        {
+            ballRingCombo.reset();
+        }
+
+
     }
 
 
@@ -64,7 +70,7 @@ public class BallScript : MonoBehaviour
         Debug.Log("collision:", collision.collider);
         var normal = collision.contacts[0].normal;
         var n = new Vector3(normal.x, normal.y, 0f);
-        var tangent = Quaternion.Euler(0, 0, 90)*n;
+        var tangent = Quaternion.Euler(0, 0, 90) * n;
 
         if (Vector3.Dot(tangent, velocity) > 0)
         {

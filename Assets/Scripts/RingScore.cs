@@ -19,7 +19,7 @@ public class RingScore : MonoBehaviour
             score = collision.GetComponent<BallScript>().score;
             _scoreManager.scoring(score);
             _textSpawner.Spawn(textOrigin.position, (score* ComboHandler.Instance.combo).ToString());
-            ComboHandler.Instance.Add();
+            //ComboHandler.Instance.Add();
         }
     }
 

@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd041b2b8a22cd45b9806c41b6e24ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ringsCount: 2
   ballSpeed: 4
   spawnRate: 1
   objectPrefab: {fileID: 7981670261491822147, guid: fe22a0c44a856924a8c77bfbe8989b8c, type: 3}

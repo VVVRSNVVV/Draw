@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BallCreator : MonoBehaviour
 {
+    [SerializeField] private int ringsCount;
     public float ballSpeed = 2f;
     public float spawnRate = .5f;
     public GameObject objectPrefab;
@@ -14,6 +15,10 @@ public class BallCreator : MonoBehaviour
     [SerializeField] private Pipe pipe;
 
     public List<GameObject> balls = new List<GameObject>();
+    private void Awake()
+    {
+        BallRingCombo.comboTarget = ringsCount;
+    }
     public void SpawnObject()
     {
         SpawnObject(objectPrefab);

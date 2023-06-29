@@ -14,6 +14,9 @@ public class ComboHandler : MonoBehaviour
     private int maxCombo = 4;
     public float value;
     public int combo = 1;
+
+   
+
     private void Awake()
     {
         Instance = this;
@@ -46,7 +49,7 @@ public class ComboHandler : MonoBehaviour
     
     private void Update()
     {
-        value -= Time.deltaTime * comboDecreaseSpeed;
+        value -= Time.deltaTime * comboDecreaseSpeed * (combo/2);
         while(value < 0)
         {
             if(combo == 1)
