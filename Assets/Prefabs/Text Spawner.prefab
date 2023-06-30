@@ -47,4 +47,4 @@ MonoBehaviour:
   labelPrefab: {fileID: 3709472452789969923, guid: 82bab35203ee7a141b9e66b1ff059cc1, type: 3}
   animDuration: 0.3
   fullDuration: 0.4
-  offset: {x: 0, y: 1, z: -8}
+  offset: {x: 0, y: 0.8, z: -8}
