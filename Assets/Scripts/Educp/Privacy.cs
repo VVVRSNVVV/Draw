@@ -11,7 +11,11 @@ public class Privacy : MonoBehaviour
     private void Start()
     {
         var accepted = PlayerPrefs.GetInt(policyKey, 0) == 1;
-        if (accepted) { return; }
+        if (accepted)
+        {
+            LoadEducationScene();
+            return;
+        }
 
         SimpleGDPR.ShowDialog(new TermsOfServiceDialog().
             SetTermsOfServiceLink("https://www.rollicgames.com/terms").
@@ -22,6 +26,10 @@ public class Privacy : MonoBehaviour
     {
         Debug.LogWarning("Policy accepted");
         PlayerPrefs.SetInt(policyKey, 1);
+        LoadEducationScene();
+    }
+    private void LoadEducationScene()
+    {
         SceneManager.LoadScene("Education");
     }
 }
